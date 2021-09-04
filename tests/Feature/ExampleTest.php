@@ -27,7 +27,7 @@ class ExampleTest extends TestCase
             'gender'=> 'Male',
         ]);
         $response->assertOk();
-        $this->assertCount(1,Patient::all());
+        $this->assertDatabaseHas('patient', ['name'=> 'Test Name']);
     }
 
     public function patient_can_be_listed()
